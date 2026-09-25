@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.9.4)  26 SEP 2026 06:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.9.4)  26 SEP 2026 06:47
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -559,7 +559,7 @@ Package hyperref Info: Link coloring ON on input line 61.
 \@outlinefile=\write3
 \openout3 = `ECON2123_PSet1_Norman.out'.
 
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 66.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 67.
  (a:/folder_for_node05_SystemData/folder_for_node12_LaTex/texlive/2026/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -567,35 +567,35 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 88.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 89.
  (a:/folder_for_node05_SystemData/folder_for_node12_LaTex/texlive/2026/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 88.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 89.
  (a:/folder_for_node05_SystemData/folder_for_node12_LaTex/texlive/2026/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 88.
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 89.
  (a:/folder_for_node05_SystemData/folder_for_node12_LaTex/texlive/2026/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 88.
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 89.
  (a:/folder_for_node05_SystemData/folder_for_node12_LaTex/texlive/2026/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 88.
+(Font)              <10.95> on input line 89.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 88.
+(Font)              <8> on input line 89.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 88.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 88.
+(Font)              <6> on input line 89.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 89.
  (a:/folder_for_node05_SystemData/folder_for_node12_LaTex/texlive/2026/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (a:/folder_for_node05_SystemData/folder_for_node12_LaTex/texlive/2026/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 88.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 89.
  (a:/folder_for_node05_SystemData/folder_for_node12_LaTex/texlive/2026/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (a:/folder_for_node05_SystemData/folder_for_node12_LaTex/texlive/2026/texmf-dist/tex/latex/microtype/mt-msb.cfg
@@ -604,28 +604,30 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 <fig1_nominal_real_gdp.pdf, id=22, 722.7pt x 419.166pt>
 File: fig1_nominal_real_gdp.pdf Graphic file (type pdf)
 <use fig1_nominal_real_gdp.pdf>
-Package pdftex.def Info: fig1_nominal_real_gdp.pdf  used on input line 92.
-(pdftex.def)             Requested size: 360.72987pt x 209.2243pt.
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 104.
+Package pdftex.def Info: fig1_nominal_real_gdp.pdf  used on input line 93.
+(pdftex.def)             Requested size: 337.00327pt x 195.46022pt.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 106.
  (a:/folder_for_node05_SystemData/folder_for_node12_LaTex/texlive/2026/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
+) [1
+
+{a:/folder_for_node05_SystemData/folder_for_node12_LaTex/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{a:/folder_for_node05_SystemData/folder_for_node12_LaTex/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{a:/folder_for_node05_SystemData/folder_for_node12_LaTex/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{a:/folder_for_node05_SystemData/folder_for_node12_LaTex/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{a:/folder_for_node05_SystemData/folder_for_node12_LaTex/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{a:/folder_for_node05_SystemData/folder_for_node12_LaTex/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc} <./fig1_nominal_real_gdp.pdf>]
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/lmr/m/sc/9'.
 (microtype)             Ignoring protrusion settings for this character.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 111.
+(Font)              <9> on input line 115.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 111.
- [1{a:/folder_for_node05_SystemData/folder_for_node12_LaTex/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{a:/folder_for_node05_SystemData/folder_for_node12_LaTex/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{a:/folder_for_node05_SystemData/folder_for_node12_LaTex/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}
-
-{a:/folder_for_node05_SystemData/folder_for_node12_LaTex/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{a:/folder_for_node05_SystemData/folder_for_node12_LaTex/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{a:/folder_for_node05_SystemData/folder_for_node12_LaTex/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc} <./fig1_nominal_real_gdp.pdf>]
-<fig2_inflation_comparison.pdf, id=132, 722.7pt x 375.804pt>
+(Font)              <5> on input line 115.
+ [2]
+<fig2_inflation_comparison.pdf, id=137, 722.7pt x 375.804pt>
 File: fig2_inflation_comparison.pdf Graphic file (type pdf)
 <use fig2_inflation_comparison.pdf>
-Package pdftex.def Info: fig2_inflation_comparison.pdf  used on input line 137.
-(pdftex.def)             Requested size: 360.72987pt x 187.58041pt.
- [2{a:/folder_for_node05_SystemData/folder_for_node12_LaTex/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc} <./fig2_inflation_comparison.pdf>] [3] [4] [5] [6] 
+Package pdftex.def Info: fig2_inflation_comparison.pdf  used on input line 141.
+(pdftex.def)             Requested size: 337.00327pt x 175.2402pt.
+ [3
+
+{a:/folder_for_node05_SystemData/folder_for_node12_LaTex/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc} <./fig2_inflation_comparison.pdf>] [4] [5] [6] [7] 
 enddocument/afterlastpage (AED): lastpage setting LastPage.
 (./ECON2123_PSet1_Norman.aux)
  ***********
@@ -636,18 +638,18 @@ Package rerunfilecheck Info: File `ECON2123_PSet1_Norman.out' has not changed.
 (rerunfilecheck)             Checksum: 35F8F72C9A908C48D479C0212B51467F;1103.
  ) 
 Here is how much of TeX's memory you used:
- 16685 strings out of 467525
- 277141 string characters out of 5395279
- 732177 words of memory out of 5000000
+ 16682 strings out of 467525
+ 277105 string characters out of 5395279
+ 731171 words of memory out of 5000000
  45077 multiletter control sequences out of 15000+600000
- 752659 words of font info for 223 fonts, out of 8000000 for 9000
+ 752440 words of font info for 221 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,15n,79p,1162b,608s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,15n,79p,1162b,614s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <a:/folder_for_node05_SystemData/folder_for_node12_LaTex/texlive/2026/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><a:/folder_for_node05_SystemData/folder_for_node12_LaTex/texlive/2026/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><a:/folder_for_node05_SystemData/folder_for_node12_LaTex/texlive/2026/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb><a:/folder_for_node05_SystemData/folder_for_node12_LaTex/texlive/2026/texmf-dist/fonts/type1/public/lm/lmex10.pfb><a:/folder_for_node05_SystemData/folder_for_node12_LaTex/texlive/2026/texmf-dist/fonts/type1/public/lm/lmmi10.pfb><a:/folder_for_node05_SystemData/folder_for_node12_LaTex/texlive/2026/texmf-dist/fonts/type1/public/lm/lmmi8.pfb><a:/folder_for_node05_SystemData/folder_for_node12_LaTex/texlive/2026/texmf-dist/fonts/type1/public/lm/lmmi9.pfb><a:/folder_for_node05_SystemData/folder_for_node12_LaTex/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr10.pfb><a:/folder_for_node05_SystemData/folder_for_node12_LaTex/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr6.pfb><a:/folder_for_node05_SystemData/folder_for_node12_LaTex/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr7.pfb><a:/folder_for_node05_SystemData/folder_for_node12_LaTex/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr8.pfb><a:/folder_for_node05_SystemData/folder_for_node12_LaTex/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr9.pfb><a:/folder_for_node05_SystemData/folder_for_node12_LaTex/texlive/2026/texmf-dist/fonts/type1/public/lm/lmri10.pfb><a:/folder_for_node05_SystemData/folder_for_node12_LaTex/texlive/2026/texmf-dist/fonts/type1/public/lm/lmri9.pfb><a:/folder_for_node05_SystemData/folder_for_node12_LaTex/texlive/2026/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><a:/folder_for_node05_SystemData/folder_for_node12_LaTex/texlive/2026/texmf-dist/fonts/type1/public/lm/lmsy8.pfb><a:/folder_for_node05_SystemData/folder_for_node12_LaTex/texlive/2026/texmf-dist/fonts/type1/public/lm/lmsy9.pfb><a:/folder_for_node05_SystemData/folder_for_node12_LaTex/texlive/2026/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on ECON2123_PSet1_Norman.pdf (6 pages, 409838 bytes).
+Output written on ECON2123_PSet1_Norman.pdf (7 pages, 410357 bytes).
 PDF statistics:
- 427 PDF objects out of 1000 (max. 8388607)
- 220 compressed objects within 3 object streams
- 56 named destinations out of 1000 (max. 500000)
+ 434 PDF objects out of 1000 (max. 8388607)
+ 226 compressed objects within 3 object streams
+ 57 named destinations out of 1000 (max. 500000)
  70187 words of extra memory for PDF output out of 74296 (max. 10000000)
 
