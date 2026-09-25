@@ -1,11 +1,11 @@
 \documentclass[11pt,a4paper]{article}
 
-% --- 核心宏包配置 (兼容标准 pdfLaTeX / TeX Live / Overleaf) ---
+% --- 核心宏包配置 ---
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage{lmodern} % 引入矢量 Type 1 字体，避免字体微调扩展报错
-\usepackage[top=0.85in, bottom=0.85in, left=0.9in, right=0.9in]{geometry}
-\usepackage{amsmath,amssymb,amsfonts,bm}
+\usepackage{lmodern} 
+\usepackage[top=0.85in, bottom=0.85in, left=0.88in, right=0.88in]{geometry}
+\usepackage{amsmath,amssymb,amsfonts,bm,mathtools}
 \usepackage{booktabs,tabularx,array}
 \usepackage{graphicx}
 \usepackage{caption}
@@ -13,21 +13,36 @@
 \usepackage{enumitem}
 \usepackage{titlesec}
 \usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
 \usepackage{hyperref}
 
-% --- 超链接与交互设置 ---
+% --- 官方配色与交互链接 ---
+\definecolor{hkustnavy}{RGB}{0, 56, 117}
+\definecolor{hkustgold}{RGB}{179, 138, 44}
+\definecolor{charcoal}{RGB}{35, 35, 35}
+
 \hypersetup{
     colorlinks=true,
-    linkcolor=blue!75!black,
-    citecolor=blue!75!black,
-    urlcolor=blue!75!black
+    linkcolor=hkustnavy,
+    citecolor=hkustnavy,
+    urlcolor=hkustnavy
 }
 
-% --- 标题层级与版面紧凑化排版 ---
-\titleformat{\section}{\large\bfseries\color{black}}{\thesection}{0.8em}{}[\vspace{-0.3em}\titlerule\vspace{0.2em}]
+% --- 页眉页脚配置 (规范学术作业格式) ---
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\footnotesize \textcolor{gray!80!black}{\textsc{HKUST ECON 2123: Macroeconomics} $\cdot$ Problem Set \#1}}
+\rhead{\footnotesize \textcolor{gray!80!black}{LIN, Anfan (20861656)}}
+\cfoot{\footnotesize \textcolor{gray!80!black}{Page \thepage\ of \pageref{LastPage}}}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+% --- 标题层级与版面排版 ---
+\titleformat{\section}{\large\bfseries\color{hkustnavy}}{\thesection}{0.8em}{}[\vspace{-0.3em}\titlerule\vspace{0.2em}]
 \titleformat{\subsection}{\normalsize\bfseries\color{black}}{\thesubsection}{0.6em}{}
-\titlespacing*{\section}{0pt}{1.0em}{0.4em}
-\titlespacing*{\subsection}{0pt}{0.6em}{0.2em}
+\titlespacing*{\section}{0pt}{1.1em}{0.4em}
+\titlespacing*{\subsection}{0pt}{0.7em}{0.25em}
 
 \setlist[enumerate]{leftmargin=*, label=\arabic*., itemsep=2pt, topsep=2pt}
 \setlist[itemize]{leftmargin=*, itemsep=2pt, topsep=2pt}
@@ -36,23 +51,26 @@
 \setlength{\parindent}{0pt}
 
 \begin{document}
+\thispagestyle{plain}
 
 % --- 题头：学生信息与课程档案 (右上角严格对齐) ---
 \begin{flushright}
-    \textbf{Norman Lin} \\
+    \textbf{\large LIN, Anfan} \\
     Student ID: \texttt{20861656} \\
+    Email: \href{mailto:alinad@connect.ust.hk}{\texttt{alinad@connect.ust.hk}} \\
     BSc in Mathematics (Computer Science Track) \\
-    HKUST ECON 2123: Macroeconomics (Fall 2026) \\
+    Department of Mathematics, HKUST \\
+    \textbf{ECON 2123: Macroeconomics} (Fall 2026) \\
     \today
 \end{flushright}
 
-\vspace{-0.6em}
+\vspace{-0.5em}
 \begin{center}
-    {\Large \textbf{Problem Set \#1: Solutions and Empirical Analysis}} \\
+    {\Large \textbf{\color{hkustnavy}Problem Set \#1: Solutions and Empirical Analysis}} \\
     \vspace{0.25em}
     {\footnotesize \textit{Macroeconomic Measurement, National Accounts Decomposition, Goods Market Equilibrium, and Multipliers}}
 \end{center}
-\vspace{0.5em}
+\vspace{0.4em}
 
 % =========================================================================
 % SECTION 1: REAL GDP AND THE GDP DEFLATOR
@@ -77,7 +95,11 @@ Annual macroeconomic data are retrieved from the Census and Statistics Departmen
 \textbf{Economic and Structural Interpretation:}
 \begin{itemize}
     \item \textbf{Base Year Intersection:} The nominal and real GDP curves intersect precisely at the reference base year \textbf{2024}, where $\text{Nominal GDP}_{2024} = \text{Real GDP}_{2024} = \text{HK\$} \, 3,186,526 \text{ million}$, by definition setting the implicit price deflator $P_{2024} \equiv 100$.
-    \item \textbf{Pre-2024 Volume Dynamics ($P\_t < 100$):} Prior to 2024, real GDP lies strictly above nominal GDP. Because historical price levels were substantially lower than the 2024 base price, evaluating historical output at 2024 chained prices scales up the physical volume of production relative to its current-market-price valuation.
+    \item \textbf{Pre-2024 Volume Dynamics ($P\_t < 100$):} Prior to 2024, real GDP lies strictly above nominal GDP. Since real GDP measures production using base-year (2024) prices:
+    \begin{equation*}
+        Y_t = \frac{Y_t^{\$}}{P_t / 100}
+    \end{equation*}
+    Because historical price levels were substantially lower than the 2024 benchmark ($P_t < 100$), dividing by an index less than 1 scales up the physical volume of production relative to its current-market-price valuation.
     \item \textbf{Post-2024 Trajectory ($P\_t > 100$):} In 2025, nominal GDP (HK\$ 3,329,843 million) exceeds real GDP (HK\$ 3,301,474 million), reflecting cumulative positive price inflation relative to the benchmark year ($P_{2025} = 100.86$).
 \end{itemize}
 
@@ -118,12 +140,12 @@ Both series are plotted concurrently in Figure~\ref{fig:inflation_comp}.
     \begin{equation}
         \Delta \ln P_t = \ln \left( \frac{P_t}{P_{t-1}} \right) = \ln \left( 1 + \frac{P_t - P_{t-1}}{P_{t-1}} \right) = \ln(1 + \pi_t)
     \end{equation}
-    Expanding $\ln(1+x)$ via a first-order Maclaurin series around zero for small inflation rates ($\vert{}\pi_t\vert{} \ll 1$):
+    Expanding $\ln(1+x)$ via a Maclaurin series for small inflation rates ($\vert{}\pi_t\vert{} \ll 1$):
     \begin{equation}
-        \ln(1 + \pi_t) = \pi_t - \frac{1}{2} \pi_t^2 + \frac{1}{3} \pi_t^3 - \dots = \pi_t - \frac{1}{2}\pi_t^2 + \mathcal{O}(\pi_t^3)
+        \ln(1 + \pi_t) = \pi_t - \frac{1}{2} \pi_t^2 + \frac{1}{3} \pi_t^3 - \cdots = \pi_t - \frac{1}{2}\pi_t^2 + \mathcal{O}(\pi_t^3)
     \end{equation}
-    The approximation error is of order $\frac{1}{2}\pi_t^2$. When inflation is moderate ($\pi_t \approx 0$), higher-order terms vanish, proving $\Delta \ln P_t \approx \pi_t$.
-    \item \textbf{Regime Divergence:} Observable separation occurs strictly in high-inflation regimes. In 1979, discrete inflation peaked at $+17.88\%$ while log-inflation yielded $+16.45\%$ (a $1.41\%$ gap). Conversely, during low-inflation regimes (e.g., 2015--2025), both measures align. The series also captures Hong Kong's protracted deflationary era from 1998 to 2004 ($\pi_t < 0$, troughing at $-6.18\%$ in 2003).
+    The approximation error is dominated by $\frac{1}{2}\pi_t^2$. When inflation is moderate ($\pi_t \approx 0$), higher-order terms vanish, proving $\Delta \ln P_t \approx \pi_t$.
+    \item \textbf{Regime Divergence:} Observable separation occurs strictly in high-inflation regimes. In 1979, discrete inflation peaked at $+17.88\%$ while log-inflation yielded $+16.45\%$ (a $1.43\%$ gap, which closely matches the theoretical second-order penalty $\frac{1}{2}(0.1788)^2 \approx 1.60\%$). Conversely, during low-inflation regimes (e.g., 2015--2025), both measures align. The series also captures Hong Kong's protracted deflationary era from 1998 to 2004 ($\pi_t < 0$, troughing at $-6.18\%$ in 2003).
 \end{itemize}
 
 % =========================================================================
@@ -146,25 +168,25 @@ Using official data from Table 310-31002 (\textit{Gross Domestic Product (GDP) b
         \textbf{Gross Domestic Product ($Y$)} & \textbf{2,981,210} & \textbf{100.00\%} \\
         \quad Consumption ($C$) & 2,087,569 & 70.02\% \\
         \quad Investment ($I$) & 481,511 & 16.15\% \\
-        \qquad \textit{Gross domestic fixed capital formation} & \textit{505,510} & \textit{16.96\%} \\
-        \qquad \textit{Changes in inventories} & \textit{-23,999} & \textit{-0.81\%} \\
+        \qquad \textit{Gross domestic fixed capital formation} ($I_{\text{fixed}}$) & \textit{505,510} & \textit{16.96\%} \\
+        \qquad \textit{Changes in inventories} ($\Delta \text{Inv}$) & \textit{$-$23,999} & \textit{$-$0.81\%} \\
         \quad Government spending ($G$) & 396,813 & 13.31\% \\
         \quad Net Exports ($NX$) & 15,317 & 0.51\% \\
         \qquad Exports of goods and services ($X$) & 5,272,395 & 176.85\% \\
         \qquad Imports of goods and services ($IM$) & 5,257,078 & 176.34\% \\
         \midrule
-        Inventory investment ($\Delta \text{Inv}$) & -23,999 & -0.81\% \\
+        Inventory investment ($\Delta \text{Inv}$) & $-$23,999 & $-$0.81\% \\
         \bottomrule
     \end{tabularx}
-    \vspace{0.25em}
+    \vspace{0.4em}
     \begin{minipage}{0.88\textwidth}
         \footnotesize \textit{National Accounting Identity Balance Check:}
-        $$C + I + G + NX = 2,087,569 + 481,511 + 396,813 + 15,317 = 2,981,210 \equiv Y \quad (\text{Exact closure})$$
+        \[C + I + G + NX = 2,087,569 + 481,511 + 396,813 + 15,317 = 2,981,210 \equiv Y \quad (\text{Exact closure})\]
     \end{minipage}
 \end{table}
 
 \subsection*{(5) Dominant Component of GDP (5 points)}
-Among the four primary components ($C, I, G, NX$), \textbf{Private Consumption Expenditure ($C$)} is the largest component, totaling \textbf{HK\$ 2,087,569 million} and accounting for \textbf{70.02\%} of total GDP in 2023.
+Among the four primary expenditure components ($C, I, G, NX$), \textbf{Private Consumption Expenditure ($C$)} is the largest component, totaling \textbf{HK\$ 2,087,569 million} and accounting for \textbf{70.02\%} of total GDP in 2023.
 
 \subsection*{(6) Trade Openness Index and US Comparison (5 points)}
 From Table 310-31002, the trade and output statistics for Hong Kong in 2022 are:
@@ -175,14 +197,14 @@ From Table 310-31002, the trade and output statistics for Hong Kong in 2022 are:
 \end{align}
 Evaluating the trade openness index:
 \begin{equation}
-    \text{Openness}_{HK, 2022} = \frac{X_{2022} + IM_{2022}}{Y_{2022}} = \frac{5,463,019 + 5,348,126}{2,808,922} = \frac{10,811,145}{2,808,922} \approx \mathbf{3.85} \quad (\mathbf{384.89\%})
+    \text{Openness}_{\mathrm{HK}, 2022} = \frac{X_{2022} + IM_{2022}}{Y_{2022}} = \frac{5,463,019 + 5,348,126}{2,808,922} = \frac{10,811,145}{2,808,922} \approx \mathbf{3.85} \quad (\mathbf{384.89\%})
 \end{equation}
 
-\textbf{Economic Comparison with the US Economy (25\% in 2023):}
+\textbf{Economic Comparison with the US Economy ($\approx$25\% in 2023):}
 Hong Kong's openness index of $\mathbf{384.89\%}$ is more than \textbf{15 times larger} than that of the United States. This divergence reflects fundamental structural differences:
 \begin{enumerate}
-    \item \textbf{Global Entrep\^ot and Re-export Intermediation:} Hong Kong operates as an open trading hub and logistics center where trade is measured in gross turnover ($X, IM$), while GDP measures domestic value-added ($Y$). Intermediate merchandise processed through Hong Kong easily exceeds domestic value-added multiple times over.
-    \item \textbf{Continental Economy vs. Small Open Economy:} The US is a self-contained, continental economy where internal interstate trade forms the primary economic base, meaning cross-border trade naturally constitutes a smaller fraction of aggregate GDP.
+    \item \textbf{Global Entrep\^ot and Re-export Intermediation:} Hong Kong operates as an ultra-open international trading and logistics hub. Trade statistics reflect gross commercial turnover ($X, IM$), whereas GDP measures net domestic value-added ($Y$). Intermediate merchandise and re-exports moving through Hong Kong routinely exceed domestic economic value-added multiple times over.
+    \item \textbf{Continental Economy vs. Small Open Economy:} The US is a continental-scale, highly self-sufficient economy where interstate domestic trade forms the core economic engine; cross-border international trade naturally constitutes a modest fraction of aggregate GDP.
 \end{enumerate}
 
 \subsection*{(7) Industry-Wise Decomposition (5 points)}
@@ -194,7 +216,7 @@ From Table 310-34101 (\textit{Gross Domestic Product (GDP) by major economic act
     \item Construction: $4.3\%$
     \item \textbf{Services}: $\mathbf{93.5\%}$
 \end{enumerate}
-The most important industry is overwhelmingly \textbf{Services}, accounting for \textbf{93.5\%} of Hong Kong's GDP in 2023. Key drivers include Financing and Insurance ($24.9\%$) and Import/Export, Wholesale and Retail Trades ($17.5\%$).
+The overwhelmingly dominant industry is \textbf{Services}, accounting for \textbf{93.5\%} of Hong Kong's GDP in 2023. Key drivers include Financing and Insurance ($24.9\%$) alongside Import/Export, Wholesale and Retail Trades ($17.5\%$).
 
 % =========================================================================
 % SECTION 3: THE EMPLOYMENT RATE
@@ -213,7 +235,7 @@ Following standard OECD definitions:
     \text{Unemployment Rate } (u) &\equiv \frac{U}{L} = \frac{L - E}{L} = 1 - \frac{E}{L} = 0.10 \implies \frac{E}{L} = 1 - u = 0.90 \\
     \text{Employment Rate } (ER) &\equiv \frac{E}{\text{WAP}}
 \end{align}
-Factoring the employment rate definition:
+Factoring the employment rate definition into the product of labor participation and employment intensity:
 \begin{equation}
     ER = \frac{E}{\text{WAP}} = \left( \frac{E}{L} \right) \times \left( \frac{L}{\text{WAP}} \right) = (1 - u) \times PR
 \end{equation}
@@ -221,7 +243,7 @@ Substituting the parameter values:
 \begin{equation}
     ER = (1 - 0.10) \times 0.80 = 0.90 \times 0.80 = \mathbf{0.72} \quad (\mathbf{72.0\%})
 \end{equation}
-The employment rate in this economy is \textbf{72\%}.
+The employment rate in this economy is \textbf{72\%}. Note that $ER \neq 1 - u$ because the denominator of the unemployment rate is the active labor force ($L$), whereas the denominator of the employment rate is the total working-age population ($\text{WAP}$).
 
 % =========================================================================
 % SECTION 4: GOODS MARKET EQUILIBRIUM & MULTIPLIERS
@@ -234,7 +256,7 @@ Consider the following goods market system for a closed economy (in billions of 
 \end{equation}
 
 \subsection*{(9) Goods Market Equilibrium Output ($Y^*$) (10 points)}
-In equilibrium, aggregate production equals aggregate demand ($Y = Z$):
+In equilibrium, aggregate output equals aggregate demand ($Y = Z$):
 \begin{align}
     Y &= C + I + G = [480 + 0.5(Y - 70)] + 110 + 250 \\
     Y &= 480 + 0.5Y - 35 + 110 + 250 = 805 + 0.5Y \\
@@ -250,7 +272,8 @@ In equilibrium, aggregate production equals aggregate demand ($Y = Z$):
 \begin{equation}
     C^* = 480 + 0.5(1,540) = 480 + 770 = \mathbf{1,250} \text{ billion euros}
 \end{equation}
-\textit{Clearing Check:} $Z^* = C^* + I + G = 1,250 + 110 + 250 = 1,610 \equiv Y^*$.
+\textit{Goods Market Clearing Verification:}
+\[Z^* = C^* + I + G = 1,250 + 110 + 250 = 1,610 \equiv Y^*\]
 
 \subsection*{(12) Savings and Investment Accounting (5 points)}
 \begin{itemize}
@@ -267,14 +290,15 @@ In equilibrium, aggregate production equals aggregate demand ($Y = Z$):
         I = \mathbf{110} \text{ billion euros}
     \end{equation}
 \end{itemize}
-\textbf{IS Identity Check:} $S_{\text{total}} = S_{\text{private}} + S_{\text{public}} = 290 + (-180) = 110 \equiv I$.
+\textbf{IS Identity Check:} Total national savings equals investment:
+\[S_{\text{total}} = S_{\text{private}} + S_{\text{public}} = 290 + (-180) = 110 \equiv I\]
 
 \subsection*{(13) Government Spending Multiplier ($\Delta Y / \Delta G$) (5 points)}
 Holding taxes fixed ($\Delta T = 0$):
 \begin{equation}
     \frac{\Delta Y}{\Delta G} = \frac{1}{1 - c_1} = \frac{1}{1 - 0.5} = \frac{1}{0.5} = \mathbf{2}
 \end{equation}
-A one-unit expansion in $G$ increases equilibrium output by \textbf{2 units}.
+A one-unit expansion in government spending increases equilibrium output by \textbf{2 units}.
 
 \subsection*{(14) Tax Multiplier ($\Delta Y / \Delta T$) (5 points)}
 Holding government spending fixed ($\Delta G = 0$):
@@ -283,19 +307,19 @@ Holding government spending fixed ($\Delta G = 0$):
 \end{equation}
 A one-unit increase in lump-sum taxes contracts equilibrium output by \textbf{1 unit}.
 
-\subsection*{(15) Balanced Budget Multiplier ($\Delta Y / \Delta G \vert{}_{\Delta G = \Delta T}$) (5 points)}
-Under a balanced budget expansion ($\Delta G = \Delta T = 1$):
+\subsection*{(15) Balanced Budget Multiplier ($\left. \Delta Y / \Delta G \right\vert{}_{\Delta G = \Delta T}$) (5 points)}
+Under a balanced budget fiscal expansion where $\Delta G = \Delta T$:
 \begin{equation}
     \left. \frac{\Delta Y}{\Delta G} \right|_{\Delta G = \Delta T} = \frac{\Delta Y}{\Delta G} + \frac{\Delta Y}{\Delta T} = \frac{1}{1 - c_1} + \frac{-c_1}{1 - c_1} = \frac{1 - c_1}{1 - c_1} = \mathbf{1}
 \end{equation}
-Output expands by exactly the increase in government spending (Haavelmo theorem).
+Output expands dollar-for-dollar with government purchases (Haavelmo's theorem), because government spending stimulates aggregate demand directly, whereas households absorb part of the tax hike by reducing private savings.
 
 \subsection*{(16) Income-Dependent Taxes and Recalculated Multiplier (10 points)}
 Suppose taxes depend endogenously on aggregate income:
 \begin{equation}
     T = t_0 + t_1 Y = -252 + 0.2 Y, \quad \text{where } t_0 = -252, \; t_1 = 0.2
 \end{equation}
-Substituting this tax rule into $Y = C + I + G$:
+Substituting this tax rule into aggregate demand:
 \begin{align}
     Y &= c_0 + c_1[Y - (-252 + 0.2Y)] + I + G \\
     Y &= c_0 + c_1(1 - 0.2)Y - c_1(-252) + I + G \\
@@ -307,11 +331,13 @@ Differentiating with respect to $G$:
 \end{equation}
 The government spending multiplier falls from $2.00$ to $\mathbf{1.67}$ (or $5/3$).
 
+\textit{Remark on Baseline Equilibrium:} At the original equilibrium $Y^* = 1,610$, endogenous tax collection equals $T = -252 + 0.2(1,610) = 70$. Thus, baseline equilibrium output is preserved at $1,610$, but output responsiveness to exogenous shocks is substantially stabilized.
+
 \subsection*{(17) Macroeconomic Rationale for Automatic Stabilizers (5 points)}
-An income-dependent tax system acts as an \textbf{automatic stabilizer} for two reasons:
+An income-dependent tax system functions as an \textbf{automatic stabilizer} through two mechanisms:
 \begin{enumerate}
-    \item \textbf{Built-in Cushioning of Disposable Income:} When an adverse demand shock contracts output ($\Delta Y < 0$), tax revenue automatically declines by $\Delta T = t_1 \Delta Y < 0$. This automatic tax relief cushions disposable income: $\Delta Y_D = (1 - t_1) \Delta Y$, meaning disposable income contracts less than output ($\vert{}\Delta Y_D\vert{} < \vert{}\Delta Y\vert{}$). Consequently, private consumption declines less sharply than under lump-sum taxes.
-    \item \textbf{Reduction of Multiplier and Volatility without Policy Lag:} The expenditure multiplier decreases from $\frac{1}{1-c_1} = 2.0$ to $\frac{1}{1-c_1(1-t_1)} \approx 1.67$. Because this damping occurs instantaneously without legislative deliberation or implementation lag, it dampens cyclical volatility and stabilizes aggregate demand.
+    \item \textbf{Built-in Cushioning of Disposable Income:} When an adverse shock reduces aggregate output ($\Delta Y < 0$), tax liabilities fall automatically by $\Delta T = t_1 \Delta Y < 0$. Disposable income falls by only $\Delta Y_D = (1 - t_1) \Delta Y$, ensuring that $\vert{}\Delta Y_D\vert{} < \vert{}\Delta Y\vert{}$. Consequently, private consumption contracts less severely than it would under lump-sum taxes.
+    \item \textbf{Damping of Multiplier Dynamics without Policy Lag:} The expenditure multiplier is lowered from $\frac{1}{1-c_1} = 2.0$ to $\frac{1}{1-c_1(1-t_1)} \approx 1.67$. Because this damping operates endogenously and instantaneously without administrative, legislative, or implementation lags, it reduces business cycle volatility.
 \end{enumerate}
 
 \end{document}
