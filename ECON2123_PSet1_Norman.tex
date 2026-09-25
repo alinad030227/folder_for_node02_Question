@@ -3,12 +3,13 @@
 % --- Core Typography & Geometry ---
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage{lmodern} 
-\usepackage[top=0.85in, bottom=0.85in, left=0.85in, right=0.85in]{geometry}
+\usepackage{lmodern}
+\usepackage[top=0.8in, bottom=0.8in, left=0.8in, right=0.8in]{geometry}
 \usepackage{amsmath,amssymb,amsfonts,bm,mathtools}
 \usepackage{booktabs,tabularx,array}
 \usepackage{graphicx}
 \usepackage{caption}
+\usepackage{float}
 \usepackage{microtype}
 \usepackage{enumitem}
 \usepackage{titlesec}
@@ -49,14 +50,20 @@
 % --- Section Titles & Spacing ---
 \titleformat{\section}{\large\bfseries\color{hkustnavy}}{\thesection}{0.8em}{}[\vspace{-0.3em}\titlerule\vspace{0.2em}]
 \titleformat{\subsection}{\normalsize\bfseries\color{black}}{\thesubsection}{0.6em}{}
-\titlespacing*{\section}{0pt}{1.0em}{0.35em}
-\titlespacing*{\subsection}{0pt}{0.65em}{0.2em}
+\titlespacing*{\section}{0pt}{0.9em}{0.3em}
+\titlespacing*{\subsection}{0pt}{0.6em}{0.2em}
 
-\setlist[enumerate]{leftmargin=*, label=\arabic*., itemsep=2pt, topsep=2pt}
-\setlist[itemize]{leftmargin=*, itemsep=2pt, topsep=2pt}
+\setlist[enumerate]{leftmargin=*, label=\arabic*., itemsep=1.5pt, topsep=2pt}
+\setlist[itemize]{leftmargin=*, itemsep=1.5pt, topsep=2pt}
 
-\setlength{\parskip}{0.32em}
+\setlength{\parskip}{0.28em}
 \setlength{\parindent}{0pt}
+
+% 优化浮动体页面占比
+\renewcommand{\topfraction}{0.9}
+\renewcommand{\bottomfraction}{0.8}
+\renewcommand{\textfraction}{0.1}
+\renewcommand{\floatpagefraction}{0.8}
 
 \begin{document}
 \thispagestyle{plain}
@@ -75,10 +82,10 @@
 \vspace{-0.6em}
 \begin{center}
     {\Large \textbf{\color{hkustnavy}Problem Set \#1: Solutions and Empirical Analysis}} \\
-    \vspace{0.25em}
+    \vspace{0.2em}
     {\footnotesize \textit{Macroeconomic Measurement, National Accounts Decomposition, Goods Market Equilibrium, and Multipliers}}
 \end{center}
-\vspace{0.3em}
+\vspace{0.2em}
 
 % =========================================================================
 % SECTION 1: REAL GDP AND THE GDP DEFLATOR
@@ -88,13 +95,13 @@
 \subsection*{(1) Nominal and Real GDP Time Series (10 points)}
 Annual macroeconomic data are retrieved from the Census and Statistics Department (C\&SD) of the Hong Kong Special Administrative Region (Table 310-31001: \textit{Gross Domestic Product (GDP), implicit price deflator of GDP and per capita GDP}). We extract ``GDP at current market prices'' (nominal GDP, $Y_t^{\$}$) and ``GDP in chained (2024) dollars'' (real GDP, $Y_t$) for the historical observation window 1961--2025 (65 annual observations). Figure~\ref{fig:gdp_series} plots both series, constructed analogously to Figure 2-1 in Blanchard (2021).
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
-    \includegraphics[width=0.71\textwidth]{fig1_nominal_real_gdp}
-    \vspace{-0.4em}
+    \includegraphics[width=0.64\textwidth]{fig1_nominal_real_gdp}
+    \vspace{-0.3em}
     \caption{Nominal and Real GDP in Hong Kong (1961--2025)}
     \label{fig:gdp_series}
-    \vspace{-0.3em}
+    \vspace{-0.2em}
     \begin{minipage}{0.76\textwidth}
         \centering
         \footnotesize \textit{Data Source:} C\&SD Table 310-31001. Real GDP is expressed in chained (2024) dollars with base year 2024.
@@ -111,8 +118,6 @@ Annual macroeconomic data are retrieved from the Census and Statistics Departmen
     Because historical price levels were substantially lower than the 2024 benchmark ($P_t < 100$), dividing by a price index less than 1 scales up the physical volume of production relative to its current-market-price valuation.
     \item \textbf{Post-2024 Trajectory ($P\_t > 100$):} In 2025, nominal GDP (HK\$ 3,329,843 million) exceeds real GDP (HK\$ 3,301,474 million), reflecting cumulative positive price inflation relative to the benchmark year ($P_{2025} = 100.86$).
 \end{itemize}
-
-\clearpage
 
 \subsection*{(2) Real GDP Growth Rates and Long-Term Average (5 points)}
 For each year $t \in [1962, 2025]$, the annual percentage growth rate of real GDP ($g_{Y, t}$) is given by:
@@ -136,10 +141,10 @@ Economists also frequently use the natural log-difference to approximate the ins
 \end{equation}
 Both series are plotted concurrently in Figure~\ref{fig:inflation_comp}.
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
-    \includegraphics[width=0.71\textwidth]{fig2_inflation_comparison}
-    \vspace{-0.4em}
+    \includegraphics[width=0.64\textwidth]{fig2_inflation_comparison}
+    \vspace{-0.3em}
     \caption{Comparison of Discrete and Logarithmic Inflation Rates (1962--2025)}
     \label{fig:inflation_comp}
 \end{figure}
@@ -151,7 +156,7 @@ Both series are plotted concurrently in Figure~\ref{fig:inflation_comp}.
     \begin{equation}
         \Delta \ln P_t = \ln \left( \frac{P_t}{P_{t-1}} \right) = \ln \left( 1 + \frac{P_t - P_{t-1}}{P_{t-1}} \right) = \ln(1 + \pi_t)
     \end{equation}
-    Expanding $\ln(1+x)$ via a Maclaurin series for small inflation rates ($\vert\pi_t\vert \ll 1$):
+    Expanding $\ln(1+x)$ via a Maclaurin series for small inflation rates ($\vert{}\pi_t\vert{} \ll 1$):
     \begin{equation}
         \ln(1 + \pi_t) = \pi_t - \frac{1}{2} \pi_t^2 + \frac{1}{3} \pi_t^3 - \cdots = \pi_t - \frac{1}{2}\pi_t^2 + \mathcal{O}(\pi_t^3)
     \end{equation}
@@ -167,7 +172,7 @@ Both series are plotted concurrently in Figure~\ref{fig:inflation_comp}.
 \subsection*{(4) Expenditure Components Accounting Table (10 points)}
 Using official data from Table 310-31002 (\textit{Gross Domestic Product (GDP) by major expenditure component at current market prices}), the 2023 expenditure components are tabulated in Table~\ref{tab:gdp_composition}. In modern national accounts, total gross investment ($I$) encompasses gross domestic fixed capital formation ($I_{\text{fixed}}$) and changes in inventories ($\Delta \text{Inv}$): $I = I_{\text{fixed}} + \Delta \text{Inv}$.
 
-\begin{table}[htbp]
+\begin{table}[H]
     \centering
     \small
     \caption{Expenditure Components of Hong Kong GDP (2023, Current Market Prices)}
@@ -189,7 +194,7 @@ Using official data from Table 310-31002 (\textit{Gross Domestic Product (GDP) b
         Inventory investment ($\Delta \text{Inv}$) & $-$23,999 & $-$0.81\% \\
         \bottomrule
     \end{tabularx}
-    \vspace{0.4em}
+    \vspace{0.3em}
     \begin{minipage}{0.92\textwidth}
         \footnotesize \textit{National Accounting Identity Balance Check:}
         \begin{align*}
@@ -325,7 +330,7 @@ Holding government spending fixed ($\Delta G = 0$):
 \end{equation}
 A one-unit increase in lump-sum taxes contracts equilibrium output by \textbf{1 unit}.
 
-\subsection*{(15) Balanced Budget Multiplier ($\left. \Delta Y / \Delta G \right\vert_{\Delta G = \Delta T}$) (5 points)}
+\subsection*{(15) Balanced Budget Multiplier ($\left. \Delta Y / \Delta G \right\vert{}_{\Delta G = \Delta T}$) (5 points)}
 Under a balanced budget fiscal expansion where $\Delta G = \Delta T$:
 \begin{equation}
     \left. \frac{\Delta Y}{\Delta G} \right|_{\Delta G = \Delta T} = \frac{\Delta Y}{\Delta G} + \frac{\Delta Y}{\Delta T} = \frac{1}{1 - c_1} + \frac{-c_1}{1 - c_1} = \frac{1 - c_1}{1 - c_1} = \mathbf{1}
@@ -354,7 +359,7 @@ The government spending multiplier falls from $2.00$ to $\mathbf{1.67}$ (or $5/3
 \subsection*{(17) Macroeconomic Rationale for Automatic Stabilizers (5 points)}
 An income-dependent tax system functions as an \textbf{automatic stabilizer} through two mechanisms:
 \begin{enumerate}
-    \item \textbf{Built-in Cushioning of Disposable Income:} When an adverse shock reduces aggregate output ($\Delta Y < 0$), tax revenue automatically declines by $\Delta T = t_1 \Delta Y < 0$. Disposable income falls by only $\Delta Y_D = (1 - t_1) \Delta Y$, ensuring that $\vert\Delta Y_D\vert < \vert\Delta Y\vert$. Consequently, private consumption declines less severely than it would under lump-sum taxes.
+    \item \textbf{Built-in Cushioning of Disposable Income:} When an adverse shock reduces aggregate output ($\Delta Y < 0$), tax revenue automatically declines by $\Delta T = t_1 \Delta Y < 0$. Disposable income falls by only $\Delta Y_D = (1 - t_1) \Delta Y$, ensuring that $\vert{}\Delta Y_D\vert{} < \vert{}\Delta Y\vert{}$. Consequently, private consumption declines less severely than it would under lump-sum taxes.
     \item \textbf{Damping of Multiplier Dynamics without Policy Lag:} The expenditure multiplier is lowered from $\frac{1}{1-c_1} = 2.0$ to $\frac{1}{1-c_1(1-t_1)} \approx 1.67$. Because this damping operates endogenously and instantaneously without administrative, legislative, or implementation lags, it reduces business cycle volatility.
 \end{enumerate}
 
