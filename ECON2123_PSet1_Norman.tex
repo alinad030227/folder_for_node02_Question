@@ -3,8 +3,8 @@
 % --- Core Typography & Geometry ---
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage{lmodern}
-\usepackage[top=0.8in, bottom=0.8in, left=0.8in, right=0.8in]{geometry}
+\usepackage{lmodern} 
+\usepackage[top=0.78in, bottom=0.78in, left=0.85in, right=0.85in]{geometry}
 \usepackage{amsmath,amssymb,amsfonts,bm,mathtools}
 \usepackage{booktabs,tabularx,array}
 \usepackage{graphicx}
@@ -53,17 +53,11 @@
 \titlespacing*{\section}{0pt}{0.9em}{0.3em}
 \titlespacing*{\subsection}{0pt}{0.6em}{0.2em}
 
-\setlist[enumerate]{leftmargin=*, label=\arabic*., itemsep=1.5pt, topsep=2pt}
-\setlist[itemize]{leftmargin=*, itemsep=1.5pt, topsep=2pt}
+\setlist[enumerate]{leftmargin=*, label=\arabic*., itemsep=2pt, topsep=2pt}
+\setlist[itemize]{leftmargin=*, itemsep=2pt, topsep=2pt}
 
-\setlength{\parskip}{0.28em}
+\setlength{\parskip}{0.3em}
 \setlength{\parindent}{0pt}
-
-% 优化浮动体页面占比
-\renewcommand{\topfraction}{0.9}
-\renewcommand{\bottomfraction}{0.8}
-\renewcommand{\textfraction}{0.1}
-\renewcommand{\floatpagefraction}{0.8}
 
 \begin{document}
 \thispagestyle{plain}
@@ -82,10 +76,10 @@
 \vspace{-0.6em}
 \begin{center}
     {\Large \textbf{\color{hkustnavy}Problem Set \#1: Solutions and Empirical Analysis}} \\
-    \vspace{0.2em}
+    \vspace{0.25em}
     {\footnotesize \textit{Macroeconomic Measurement, National Accounts Decomposition, Goods Market Equilibrium, and Multipliers}}
 \end{center}
-\vspace{0.2em}
+\vspace{0.3em}
 
 % =========================================================================
 % SECTION 1: REAL GDP AND THE GDP DEFLATOR
@@ -98,11 +92,11 @@ Annual macroeconomic data are retrieved from the Census and Statistics Departmen
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.64\textwidth]{fig1_nominal_real_gdp}
-    \vspace{-0.3em}
+    \vspace{-0.4em}
     \caption{Nominal and Real GDP in Hong Kong (1961--2025)}
     \label{fig:gdp_series}
-    \vspace{-0.2em}
-    \begin{minipage}{0.76\textwidth}
+    \vspace{-0.3em}
+    \begin{minipage}{0.80\textwidth}
         \centering
         \footnotesize \textit{Data Source:} C\&SD Table 310-31001. Real GDP is expressed in chained (2024) dollars with base year 2024.
     \end{minipage}
@@ -131,19 +125,17 @@ Computing the arithmetic mean across all 64 continuous annual growth rates (iden
 \textbf{Macroeconomic Highlights:} Hong Kong exhibited rapid double-digit growth during early export industrialization, peaking at $+16.16\%$ in 1976. Major cyclical troughs reflect severe external shocks: $-5.88\%$ during the 1998 Asian Financial Crisis and an all-time low of $-6.54\%$ during the 2020 pandemic shock.
 
 \subsection*{(3) GDP Deflator and Inflation Rates: Discrete vs. Logarithmic (5 points)}
-The implicit GDP deflator ($P_t$, base year $2024 = 100$) and the discrete percentage inflation rate ($\pi_t$) are defined as:
-\begin{equation}
-    P_t = \frac{\text{Nominal GDP}_t}{\text{Real GDP}_t} \times 100, \qquad \pi_t = \frac{P_t - P_{t-1}}{P_{t-1}} \times 100\%
-\end{equation}
-Economists also frequently use the natural log-difference to approximate the instantaneous rate of inflation:
-\begin{equation}
-    \pi_t^{\text{log}} = \Delta \ln P_t \times 100\% = (\ln P_t - \ln P_{t-1}) \times 100\%
-\end{equation}
+The implicit GDP deflator ($P_t$, base year $2024 = 100$), discrete percentage inflation rate ($\pi_t$), and natural log-difference approximation ($\pi_t^{\text{log}}$) are defined as:
+\begin{align}
+    P_t &= \frac{\text{Nominal GDP}_t}{\text{Real GDP}_t} \times 100, \qquad \pi_t = \frac{P_t - P_{t-1}}{P_{t-1}} \times 100\% \\
+    \pi_t^{\text{log}} &= \Delta \ln P_t \times 100\% = (\ln P_t - \ln P_{t-1}) \times 100\%
+\end{align}
 Both series are plotted concurrently in Figure~\ref{fig:inflation_comp}.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.64\textwidth]{fig2_inflation_comparison}
+    \vspace{-0.3em}
+    \includegraphics[width=0.48\textwidth]{fig2_inflation_comparison}
     \vspace{-0.3em}
     \caption{Comparison of Discrete and Logarithmic Inflation Rates (1962--2025)}
     \label{fig:inflation_comp}
@@ -172,7 +164,7 @@ Both series are plotted concurrently in Figure~\ref{fig:inflation_comp}.
 \subsection*{(4) Expenditure Components Accounting Table (10 points)}
 Using official data from Table 310-31002 (\textit{Gross Domestic Product (GDP) by major expenditure component at current market prices}), the 2023 expenditure components are tabulated in Table~\ref{tab:gdp_composition}. In modern national accounts, total gross investment ($I$) encompasses gross domestic fixed capital formation ($I_{\text{fixed}}$) and changes in inventories ($\Delta \text{Inv}$): $I = I_{\text{fixed}} + \Delta \text{Inv}$.
 
-\begin{table}[H]
+\begin{table}[htbp]
     \centering
     \small
     \caption{Expenditure Components of Hong Kong GDP (2023, Current Market Prices)}
@@ -194,7 +186,7 @@ Using official data from Table 310-31002 (\textit{Gross Domestic Product (GDP) b
         Inventory investment ($\Delta \text{Inv}$) & $-$23,999 & $-$0.81\% \\
         \bottomrule
     \end{tabularx}
-    \vspace{0.3em}
+    \vspace{0.4em}
     \begin{minipage}{0.92\textwidth}
         \footnotesize \textit{National Accounting Identity Balance Check:}
         \begin{align*}
